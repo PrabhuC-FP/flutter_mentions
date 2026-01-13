@@ -5,6 +5,8 @@ class OptionList extends StatelessWidget {
     required this.data,
     required this.onTap,
     required this.suggestionListHeight,
+    this.suggestionListWidth = 400,
+    this.minSuggestionListWidth = 150,
     this.suggestionBuilder,
     this.suggestionListDecoration,
   });
@@ -15,7 +17,7 @@ class OptionList extends StatelessWidget {
 
   final Function(Map<String, dynamic>) onTap;
 
-  final double suggestionListHeight;
+  final double suggestionListHeight, suggestionListWidth, minSuggestionListWidth;
 
   final BoxDecoration? suggestionListDecoration;
 
@@ -28,7 +30,10 @@ class OptionList extends StatelessWidget {
             constraints: BoxConstraints(
               maxHeight: suggestionListHeight,
               minHeight: 0,
+              maxWidth: suggestionListWidth,
+              minWidth: minSuggestionListWidth,
             ),
+            alignment: Alignment.topLeft,
             child: ListView.builder(
               itemCount: data.length,
               shrinkWrap: true,

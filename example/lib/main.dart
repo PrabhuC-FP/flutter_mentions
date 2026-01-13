@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             child: Text('Get Text'),
             onPressed: () {
               print(key.currentState!.controller!.markupText);
@@ -53,6 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
               suggestionPosition: SuggestionPosition.Top,
               maxLines: 5,
               minLines: 1,
+              suggestionListWidth: 400,
+              minSuggestionListWidth: 150,
+              suggestionListHeight: 100,
               decoration: InputDecoration(hintText: 'hello'),
               mentions: [
                 Mention(
