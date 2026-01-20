@@ -27,6 +27,7 @@ class FlutterMentions extends StatefulWidget {
     this.autofocus = false,
     this.autocorrect = true,
     this.enableSuggestions = true,
+    this.spellCheckConfiguration,
     this.maxLines = 1,
     this.minLines,
     this.expands = false,
@@ -146,6 +147,9 @@ class FlutterMentions extends StatefulWidget {
 
   /// {@macro flutter.services.textInput.enableSuggestions}
   final bool enableSuggestions;
+
+  /// {@macro flutter.services.textInput.spellCheckConfiguration}
+  final SpellCheckConfiguration? spellCheckConfiguration;
 
   /// {@macro flutter.widgets.editableText.maxLines}
   final int maxLines;
@@ -485,6 +489,7 @@ class FlutterMentionsState extends State<FlutterMentions> {
                 enabled: widget.enabled,
                 enableInteractiveSelection: widget.enableInteractiveSelection,
                 enableSuggestions: widget.enableSuggestions,
+                spellCheckConfiguration: widget.spellCheckConfiguration,
                 scrollController: widget.scrollController,
                 scrollPadding: widget.scrollPadding,
                 scrollPhysics: widget.scrollPhysics,
